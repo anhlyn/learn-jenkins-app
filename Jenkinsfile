@@ -3,8 +3,13 @@ pipeline {
 
     stages {
         stage('Hello') {
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                }
+            }
             steps {
-                sh 'npm test'
+                sh 'npm --version'
             }
         }
     }
