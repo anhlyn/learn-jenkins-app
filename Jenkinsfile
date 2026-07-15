@@ -10,7 +10,7 @@ pipeline {
             }
             steps {
                 sh 'npm --version'
-                sh 'npm install'
+                sh 'npm i'
                 sh 'npm run build'
                 sh 'test -d build'
             }
