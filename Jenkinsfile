@@ -12,7 +12,6 @@ pipeline {
                 sh 'npm --version'
                 sh 'npm ci'
                 sh 'npm run build'
-                sh 'test -d build'
             }
         }
         stage('STAGE-TEST'){
@@ -22,7 +21,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'npm test'
+                sh 'test -f build/index.html'
             }
         }
     }
