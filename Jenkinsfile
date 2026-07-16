@@ -22,6 +22,7 @@ pipeline {
                 sh 'test -f build/index.html'
                 sh 'ls -la'
                 sh 'test -f lin-ne.txt'
+                sh 'find . -name "lin-ne.txt"'
             }
         }
     }
