@@ -20,10 +20,17 @@ pipeline {
         stage('STAGE-TEST'){
             steps{
                 sh 'test -f build/index.html'
+                sh 'npm test'
                 sh 'ls -la'
                 sh 'test -f lin-ne.txt'
                 sh 'find . -name "lin-ne.txt"'
             }
+        }
+    }
+
+    post{
+        always{
+            junit 'test-results/junit.xml'
         }
     }
 }
