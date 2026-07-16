@@ -18,6 +18,11 @@ pipeline {
             }
         }
         stage('STAGE-TEST'){
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                }
+            }
             steps{
                 sh 'test -f build/index.html'
                 sh 'npm --version'
