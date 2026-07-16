@@ -20,6 +20,7 @@ pipeline {
         stage('STAGE-TEST'){
             steps{
                 sh 'test -f build/index.html'
+                sh 'npm --version'
                 sh 'npm test'
                 sh 'ls -la'
                 sh 'test -f lin-ne.txt'
