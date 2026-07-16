@@ -17,11 +17,6 @@ pipeline {
             }
         }
         stage('STAGE-TEST'){
-            agent{
-                docker{
-                    image 'node:20-alpine'
-                }
-            }
             steps{
                 sh 'test -f build/index.html'
                 sh 'ls -la'
