@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('STAGEONE') {
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                }
+            }
+            steps {
+                sh 'touch stageone.txt'
+                sh 'ls -l'
+            }
+        }
+        stage('STAGETWO'){
+             agent{
+                docker{
+                    image 'node:20-alpine'
+                }
+            }
+            steps {
+                sh 'touch stagetwo.txt'
+                sh 'ls -l'
+            }
+        }
+    }
+}
