@@ -33,6 +33,20 @@ pipeline {
                 sh 'find . -name "lin-ne.txt"'
             }
         }
+        stage('STAGE-DEPLOY'){
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
+            steps{
+                sh '''
+                    npm install -g netlify-cli
+                    netlify --version
+                '''
+            }
+        }
     }
 
     post{
