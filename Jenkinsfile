@@ -51,6 +51,9 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to PROD with site id: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
+                    node_modules/.bin/netlify env:list
+                    node_modules/.bin/netlify sites:create --name lin-site-project02
+                    node_modules/.bin/netlify sites:list
                 '''
             }
         }
