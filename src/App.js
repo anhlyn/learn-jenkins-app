@@ -13,10 +13,11 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn Jenkins on Udemy
+          Lin already completed the Jenkins course. Super Talent =))
         </a>
       </header>
       <p>
-          Application version: 1
+          Application version: 2
       </p>
     </div>
   );
